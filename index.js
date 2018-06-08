@@ -20,6 +20,12 @@ $(document).ready(function () {
         }
     });
 
+    app.$watch('bars',function(change){
+        setTimeout(function(){
+            console.log('sorted');
+        },3000);
+    });
+
     window.app = app;
     $('.bar').bind('click',function(){
         var bubbleSort = function (arr) {
@@ -28,13 +34,17 @@ $(document).ready(function () {
                 for (var j = 0; j < len - 1 - i; j++) {
                     if (arr[j].id > arr[j + 1].id) {
                         var temp = arr[j + 1];
-                        arr[j + 1] = arr[j];
-                        arr[j] = temp;
+                        Vue.set(app.bars,j+1,app.bars[j]);
+                        Vue.set(app.bars,j,temp);
+                        //arr[j + 1] = arr[j];
+                        //arr[j] = temp;
                     }
                 }
             }
             return arr;
         };
-        window.app.$data.bars.sort(function(a,b){ return a.id - b.id > 0; });
+        var list = window.app.$data.bars;
+        var res = bubbleSort(list);
+        
     });
 });
