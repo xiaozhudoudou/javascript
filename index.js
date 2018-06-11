@@ -34,6 +34,7 @@ $(document).ready(function () {
                 for (var j = 0; j < len - 1 - i; j++) {
                     if (arr[j].id > arr[j + 1].id) {
                         var temp = arr[j + 1];
+                        //switch two items postion
                         Vue.set(app.bars,j+1,app.bars[j]);
                         Vue.set(app.bars,j,temp);
                         //arr[j + 1] = arr[j];
