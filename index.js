@@ -1,8 +1,10 @@
 $(document).ready(function () {
+
     Vue.component('bar-item', {
         props: ['item'],
         template: "<div :id='item.id' class='bar' :style='{height:item.height}'><span>{{item.text}}</span></div>"
     });
+
     var app = new Vue({
         el: '.graph',
         data: {
@@ -20,13 +22,14 @@ $(document).ready(function () {
         }
     });
 
-    app.$watch('bars',function(change){
-        
-    });
+    //this can be used to watch every change of sort item
+    //app.$watch('bars', function (change) {
+    // 
+    //});
 
     window.app = app;
 
-    $('.bar').bind('click',function(){
+    $('.bar').bind('click', function () {
         var bubbleSort = function (arr) {
             var len = arr.length;
             let count = 0;
@@ -34,11 +37,14 @@ $(document).ready(function () {
                 for (let j = 0; j < len - 1 - i; j++) {
                     if (arr[j].id > arr[j + 1].id) {
                         count++;
-                        setTimeout(function(){
-                            var temp = arr[j + 1];
-                            Vue.set(app.bars,j+1,app.bars[j]);
-                            Vue.set(app.bars,j,temp);
-                        },1000 * count);
+                        (function (innerCount) {
+                            setTimeout(function () {
+                                var temp = arr[j + 1];
+                                Vue.set(app.bars, j + 1, app.bars[j]);
+                                Vue.set(app.bars, j, temp);
+                                console.log('switch item position at ' + innerCount + ' round!');
+                            }, 1000 * innerCount);
+                        })(count);
                     }
                 }
             }
