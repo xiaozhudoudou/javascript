@@ -7,3 +7,5 @@ var fn = function(){
 
 var f = fn();
 f();
+f();
+f();
