@@ -1,0 +1,7 @@
+server {
+    listen 9981;
+    index index.html;
+    location / {
+        root/home/james/Projects/github_projects/src/js_code_learn
+    }
+}

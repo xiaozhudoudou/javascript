@@ -1,16 +1,15 @@
 <html>
-    <head>
-        <title>index</title>
-        <script src="index.js"></script>
-        <style>
-            .bar {
-                height:100px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="bar">
-            index22222
-        </div>
-    </body>
+<head>
+    <title>index</title>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" text="text/css" href="style.css"></link>
+</head>
+<body>
+    <div class="graph">
+        <bar-item v-for="bar in bars" v-bind:item="bar" v-bind:key="bar.id">
+        </bar-item>
+    </div>
+</body>
 </html>
