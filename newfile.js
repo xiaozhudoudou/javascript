@@ -1,1 +1,2 @@
 var fn = function(){};
+webkitRequestAnimationFrame
