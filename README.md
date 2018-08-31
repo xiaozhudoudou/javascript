@@ -1,6 +1,6 @@
 git commands notes:
 
-1.git checkout -b <new branch> : create new branch and check out it
+1.git checkout -b [new branch] : create new branch and check out it
 
 2.git push -u origin <local new branch> : push local branch to remote server and make connection with it
 
