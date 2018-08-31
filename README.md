@@ -1,5 +1,5 @@
-#This project is only used to practice javascript code, everyone can push your code here and have fun with it.
-note:some git commands here
+git commands notes:
+
 1.git checkout -b <new branch> : create new branch and check out it
 
 2.git push -u origin <local new branch> : push local branch to remote server and make connection with it
