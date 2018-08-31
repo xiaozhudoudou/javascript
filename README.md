@@ -12,7 +12,7 @@ git commands notes:
 
 6.git branch -r -d origin/[remote branch name] : delete remote branch
 
-7.git push origin:[remote branch name] : push the deletion to remote server
+7.git push origin :[remote branch name] : push the deletion to remote server
 
 8.git merge [local branch name] --no-commit --no-ff : merge local branch name to current branch without commit
 
